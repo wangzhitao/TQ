@@ -32,7 +32,6 @@ import java.util.HashMap;
 import online.laoliang.simpleweather.R;
 import online.laoliang.simpleweather.model.CityList;
 import online.laoliang.simpleweather.model.CityListAdapter;
-import online.laoliang.simpleweather.service.AutoUpdateService;
 import online.laoliang.simpleweather.util.HttpCallbackListener;
 import online.laoliang.simpleweather.util.HttpUtil;
 import online.laoliang.simpleweather.util.ScreenShotUtils;
@@ -317,10 +316,10 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
 
         // 判断是否为首次启动APP
         boolean isFirstStart = prefs.getBoolean("first_start", true);
-        if (isFirstStart) {
-            Intent intent = new Intent(this, WelcomeActivity.class);
-            startActivity(intent);
-        }
+//        if (isFirstStart) {
+//            Intent intent = new Intent(this, WelcomeActivity.class);
+//            startActivity(intent);
+//        }
 
         // 发送桌面小部件启动的广播
         Intent intent = new Intent("com.simpleweather.app.MY_WIDGETPROVIDER_BROADCAST");
@@ -329,11 +328,11 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
         // 根据设置记录，判断是否需要启动后台更新服务
         prefs = getSharedPreferences("data_setting", MODE_PRIVATE);
         boolean isBackUpdate = prefs.getBoolean("back_update", true);
-        if (isBackUpdate) {
-            Intent i = new Intent(this, AutoUpdateService.class);
-            i.putExtra("anHour", -1);
-            startService(i);
-        }
+//        if (isBackUpdate) {
+//            Intent i = new Intent(this, AutoUpdateService.class);
+//            i.putExtra("anHour", -1);
+//            startService(i);
+//        }
 
         // 有县级代号时就去查询天气
         String countyCode = getIntent().getStringExtra("county_code");
@@ -716,21 +715,17 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
                 startActivity(intent_add_city);
                 finish();
                 break;
-            case R.id.choose_theme:
-                Intent intent_choose_theme = new Intent(this, ChooseThemeActivity.class);
-                drawer_layout.closeDrawers();
-                startActivity(intent_choose_theme);
-                break;
-            case R.id.setting:
-                Intent intent_setting = new Intent(this, SettingActivity.class);
-                drawer_layout.closeDrawers();
-                startActivity(intent_setting);
-                break;
-            case R.id.about:
-                Intent intent_about = new Intent(this, AboutActivity.class);
-                drawer_layout.closeDrawers();
-                startActivity(intent_about);
-                break;
+//            case R.id.choose_theme:
+//                Intent intent_choose_theme = new Intent(this, ChooseThemeActivity.class);
+//                drawer_layout.closeDrawers();
+//                startActivity(intent_choose_theme);
+//                break;
+//            case R.id.setting:
+//                Intent intent_setting = new Intent(this, SettingActivity.class);
+//                drawer_layout.closeDrawers();
+//                startActivity(intent_setting);
+//                break;
+
             default:
                 break;
         }

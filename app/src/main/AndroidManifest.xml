@@ -22,16 +22,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.ChooseAreaActivity"/>
-        <activity android:name=".activity.SettingActivity"/>
-        <activity android:name=".activity.AboutActivity"/>
-        <activity android:name=".activity.WelcomeActivity"/>
-        <activity android:name=".activity.FeedBackACtivity"/>
-        <activity
-            android:name=".activity.ChooseThemeActivity"
-            android:theme="@style/FloatActivity"/>
-
-        <service android:name=".service.AutoUpdateService"/>
-        <service android:name=".service.TimerService"/>
 
         <receiver android:name=".receiver.AutoUpdateReceiver">
             <intent-filter>

@@ -3,7 +3,6 @@ package online.laoliang.simpleweather.activity;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,12 +11,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -25,10 +20,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.JsonObject;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -45,8 +38,6 @@ import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 import online.laoliang.simpleweather.R;
 import online.laoliang.simpleweather.model.CityList;
-import online.laoliang.simpleweather.model.CityListAdapter;
-import online.laoliang.simpleweather.service.AutoUpdateService;
 import online.laoliang.simpleweather.util.HttpCallbackListener;
 import online.laoliang.simpleweather.util.HttpUtil;
 import online.laoliang.simpleweather.util.ScreenShotUtils;
@@ -557,21 +548,21 @@ public class WeatherActivityNew extends Activity implements SwipeRefreshLayout.O
                 startActivity(intent_add_city);
                 finish();
                 break;
-            case R.id.choose_theme:
-                Intent intent_choose_theme = new Intent(this, ChooseThemeActivity.class);
-                drawer_layout.closeDrawers();
-                startActivity(intent_choose_theme);
-                break;
-            case R.id.setting:
-                Intent intent_setting = new Intent(this, SettingActivity.class);
-                drawer_layout.closeDrawers();
-                startActivity(intent_setting);
-                break;
-            case R.id.about:
-                Intent intent_about = new Intent(this, AboutActivity.class);
-                drawer_layout.closeDrawers();
-                startActivity(intent_about);
-                break;
+//            case R.id.choose_theme:
+//                Intent intent_choose_theme = new Intent(this, ChooseThemeActivity.class);
+//                drawer_layout.closeDrawers();
+//                startActivity(intent_choose_theme);
+//                break;
+//            case R.id.setting:
+//                Intent intent_setting = new Intent(this, SettingActivity.class);
+//                drawer_layout.closeDrawers();
+//                startActivity(intent_setting);
+//                break;
+//            case R.id.about:
+//                Intent intent_about = new Intent(this, AboutActivity.class);
+//                drawer_layout.closeDrawers();
+//                startActivity(intent_about);
+//                break;
             default:
                 break;
         }
