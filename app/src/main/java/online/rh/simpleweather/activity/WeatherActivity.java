@@ -1,4 +1,4 @@
-package online.laoliang.simpleweather.activity;
+package online.rh.simpleweather.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -29,15 +29,15 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import online.laoliang.simpleweather.R;
-import online.laoliang.simpleweather.model.CityList;
-import online.laoliang.simpleweather.model.CityListAdapter;
-import online.laoliang.simpleweather.util.HttpCallbackListener;
-import online.laoliang.simpleweather.util.HttpUtil;
-import online.laoliang.simpleweather.util.ScreenShotUtils;
-import online.laoliang.simpleweather.util.ShareUtils;
-import online.laoliang.simpleweather.util.ToastUtil;
-import online.laoliang.simpleweather.util.Utility;
+import online.rh.simpleweather.R;
+import online.rh.simpleweather.model.CityList;
+import online.rh.simpleweather.model.CityListAdapter;
+import online.rh.simpleweather.util.HttpCallbackListener;
+import online.rh.simpleweather.util.HttpUtil;
+import online.rh.simpleweather.util.ScreenShotUtils;
+import online.rh.simpleweather.util.ShareUtils;
+import online.rh.simpleweather.util.ToastUtil;
+import online.rh.simpleweather.util.Utility;
 
 public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRefreshListener, OnClickListener {
 

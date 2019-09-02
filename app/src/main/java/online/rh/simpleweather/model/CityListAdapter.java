@@ -1,4 +1,4 @@
-package online.laoliang.simpleweather.model;
+package online.rh.simpleweather.model;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import online.laoliang.simpleweather.R;
+import online.rh.simpleweather.R;
 
 /**
  * 已选城市列表CityList的自定义适配器

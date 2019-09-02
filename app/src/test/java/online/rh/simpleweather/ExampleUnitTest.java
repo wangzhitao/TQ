@@ -1,4 +1,4 @@
-package online.laoliang.simpleweather;
+package online.rh.simpleweather;
 
 import org.junit.Test;
 

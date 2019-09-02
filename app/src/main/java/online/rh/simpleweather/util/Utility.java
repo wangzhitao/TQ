@@ -1,4 +1,4 @@
-package online.laoliang.simpleweather.util;
+package online.rh.simpleweather.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -13,10 +13,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import online.laoliang.simpleweather.model.City;
-import online.laoliang.simpleweather.model.County;
-import online.laoliang.simpleweather.model.Province;
-import online.laoliang.simpleweather.model.SimpleWeatherDB;
+import online.rh.simpleweather.model.City;
+import online.rh.simpleweather.model.County;
+import online.rh.simpleweather.model.Province;
+import online.rh.simpleweather.model.SimpleWeatherDB;
 
 /**
  * 由于服务器返回的省市县数据都是“代号|城市”这种格式， 所以创建此工具类来解析和处理这种数据

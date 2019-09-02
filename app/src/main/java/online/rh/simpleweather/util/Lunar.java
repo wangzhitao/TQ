@@ -1,4 +1,4 @@
-package online.laoliang.simpleweather.util;
+package online.rh.simpleweather.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

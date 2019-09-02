@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="online.laoliang.simpleweather">
+          package="online.rh.simpleweather">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
@@ -15,13 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".activity.WeatherActivityNew">
+        <activity android:name="online.rh.simpleweather.activity.WeatherActivityNew">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ChooseAreaActivity"/>
+        <activity android:name="online.rh.simpleweather.activity.ChooseAreaActivity"/>
 
         <receiver android:name=".receiver.AutoUpdateReceiver">
             <intent-filter>

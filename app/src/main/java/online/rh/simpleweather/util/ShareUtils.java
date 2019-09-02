@@ -1,4 +1,4 @@
-package online.laoliang.simpleweather.util;
+package online.rh.simpleweather.util;
 
 import android.content.Context;
 import android.content.Intent;

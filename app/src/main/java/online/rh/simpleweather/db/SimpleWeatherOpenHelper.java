@@ -1,4 +1,4 @@
-package online.laoliang.simpleweather.db;
+package online.rh.simpleweather.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

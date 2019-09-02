@@ -1,4 +1,4 @@
-package online.laoliang.simpleweather.util;
+package online.rh.simpleweather.util;
 
 public interface HttpCallbackListener {
 

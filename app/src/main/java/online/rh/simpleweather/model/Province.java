@@ -1,4 +1,4 @@
-package online.laoliang.simpleweather.model;
+package online.rh.simpleweather.model;
 
 public class Province {
 

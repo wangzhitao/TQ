@@ -1,4 +1,4 @@
-package online.laoliang.simpleweather.model;
+package online.rh.simpleweather.model;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-import online.laoliang.simpleweather.db.SimpleWeatherOpenHelper;
+import online.rh.simpleweather.db.SimpleWeatherOpenHelper;
 
 /**
  * SimpleWeatherDB是一个单例类，构造方法私有化，并提供了getInstance()方法来获取SimpleWeatherDB的实例

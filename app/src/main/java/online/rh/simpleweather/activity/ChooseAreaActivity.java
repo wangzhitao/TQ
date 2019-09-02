@@ -1,4 +1,4 @@
-package online.laoliang.simpleweather.activity;
+package online.rh.simpleweather.activity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -19,15 +19,15 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import online.laoliang.simpleweather.R;
-import online.laoliang.simpleweather.model.City;
-import online.laoliang.simpleweather.model.County;
-import online.laoliang.simpleweather.model.Province;
-import online.laoliang.simpleweather.model.SimpleWeatherDB;
-import online.laoliang.simpleweather.util.HttpCallbackListener;
-import online.laoliang.simpleweather.util.HttpUtil;
-import online.laoliang.simpleweather.util.ToastUtil;
-import online.laoliang.simpleweather.util.Utility;
+import online.rh.simpleweather.R;
+import online.rh.simpleweather.model.City;
+import online.rh.simpleweather.model.County;
+import online.rh.simpleweather.model.Province;
+import online.rh.simpleweather.model.SimpleWeatherDB;
+import online.rh.simpleweather.util.HttpCallbackListener;
+import online.rh.simpleweather.util.HttpUtil;
+import online.rh.simpleweather.util.ToastUtil;
+import online.rh.simpleweather.util.Utility;
 
 public class ChooseAreaActivity extends Activity implements OnClickListener {
 

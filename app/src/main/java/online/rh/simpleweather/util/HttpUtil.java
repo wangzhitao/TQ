@@ -1,4 +1,4 @@
-package online.laoliang.simpleweather.util;
+package online.rh.simpleweather.util;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

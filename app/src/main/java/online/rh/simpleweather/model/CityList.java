@@ -1,4 +1,4 @@
-package online.laoliang.simpleweather.model;
+package online.rh.simpleweather.model;
 
 /**
  * 定制已选城市列表的ListView界面
