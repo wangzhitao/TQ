@@ -185,7 +185,7 @@ public class WeatherActivityNew extends Activity implements SwipeRefreshLayout.O
         current_date_tv = (TextView) findViewById(R.id.current_date);
         wendu_tv = (TextView) findViewById(R.id.wendu);
 
-        ic_00_iv = (ImageView) findViewById(R.id.ic_00);
+
         ic_0_iv = (ImageView) findViewById(R.id.ic_0);
         ic_1_iv = (ImageView) findViewById(R.id.ic_1);
         ic_2_iv = (ImageView) findViewById(R.id.ic_2);
@@ -193,12 +193,7 @@ public class WeatherActivityNew extends Activity implements SwipeRefreshLayout.O
         ic_4_iv = (ImageView) findViewById(R.id.ic_4);
         ic_000_iv = (ImageView) findViewById(R.id.ic_000);
 
-        high_00_tv = (TextView) findViewById(R.id.high_00);
-        low_00_tv = (TextView) findViewById(R.id.low_00);
-        date_00_tv = (TextView) findViewById(R.id.date_00);
-        type_00_tv = (TextView) findViewById(R.id.type_00);
-        fengli_00_tv = (TextView) findViewById(R.id.fengli_00);
-        divide_00 = (TextView) findViewById(R.id.divide_00);
+
 
         high_0_tv = (TextView) findViewById(R.id.high_0);
         low_0_tv = (TextView) findViewById(R.id.low_0);

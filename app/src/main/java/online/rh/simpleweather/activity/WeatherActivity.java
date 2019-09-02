@@ -207,7 +207,7 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
         current_date_tv = (TextView) findViewById(R.id.current_date);
         wendu_tv = (TextView) findViewById(R.id.wendu);
 
-        ic_00_iv = (ImageView) findViewById(R.id.ic_00);
+
         ic_0_iv = (ImageView) findViewById(R.id.ic_0);
         ic_1_iv = (ImageView) findViewById(R.id.ic_1);
         ic_2_iv = (ImageView) findViewById(R.id.ic_2);
@@ -215,12 +215,6 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
         ic_4_iv = (ImageView) findViewById(R.id.ic_4);
         ic_000_iv = (ImageView) findViewById(R.id.ic_000);
 
-        high_00_tv = (TextView) findViewById(R.id.high_00);
-        low_00_tv = (TextView) findViewById(R.id.low_00);
-        date_00_tv = (TextView) findViewById(R.id.date_00);
-        type_00_tv = (TextView) findViewById(R.id.type_00);
-        fengli_00_tv = (TextView) findViewById(R.id.fengli_00);
-        divide_00 = (TextView) findViewById(R.id.divide_00);
 
         high_0_tv = (TextView) findViewById(R.id.high_0);
         low_0_tv = (TextView) findViewById(R.id.low_0);
@@ -465,13 +459,13 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
             current_date_tv.setText(null);
             wendu_tv.setText("N/A");
 
-            high_00_tv.setText(null);
-            low_00_tv.setText(null);
-            date_00_tv.setText(null);
-            type_00_tv.setText(null);
-            fengli_00_tv.setText(null);
-            ic_00_iv.setImageResource(R.mipmap.back);
-            divide_00.setText(null);
+//            high_00_tv.setText(null);
+//            low_00_tv.setText(null);
+//            date_00_tv.setText(null);
+//            type_00_tv.setText(null);
+//            fengli_00_tv.setText(null);
+//            ic_00_iv.setImageResource(R.mipmap.back);
+//            divide_00.setText(null);
 
             high_0_tv.setText(null);
             low_0_tv.setText(null);
@@ -531,13 +525,13 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
             current_date_tv.setText(prefs.getString("current_date", null));
             wendu_tv.setText(prefs.getString("wendu", null));
 
-            high_00_tv.setText(prefs.getString("high_00", null));
-            low_00_tv.setText(prefs.getString("low_00", null));
-            date_00_tv.setText(prefs.getString("date_00", null));
-            type_00_tv.setText(prefs.getString("type_00", null));
-            fengli_00_tv.setText(prefs.getString("fengli_00", null));
-            ic_00_iv.setImageResource(selectImage(prefs.getString("type_00", null)));
-            divide_00.setText("/");
+//            high_00_tv.setText(prefs.getString("high_00", null));
+//            low_00_tv.setText(prefs.getString("low_00", null));
+//            date_00_tv.setText(prefs.getString("date_00", null));
+//            type_00_tv.setText(prefs.getString("type_00", null));
+//            fengli_00_tv.setText(prefs.getString("fengli_00", null));
+//            ic_00_iv.setImageResource(selectImage(prefs.getString("type_00", null)));
+//            divide_00.setText("/");
 
             high_0_tv.setText(prefs.getString("high_0", null));
             low_0_tv.setText(prefs.getString("low_0", null));
