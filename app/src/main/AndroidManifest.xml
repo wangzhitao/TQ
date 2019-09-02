@@ -15,7 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="online.rh.simpleweather.activity.ChooseAreaActivity">
+        <activity
+            android:name="online.rh.simpleweather.activity.ChooseAreaActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -23,8 +27,14 @@
         </activity>
 
 
-        <activity android:name="online.rh.simpleweather.activity.WeatherActivityNew" />
-        <activity android:name="online.rh.simpleweather.activity.WeatherActivity" />
+        <activity
+            android:name="online.rh.simpleweather.activity.WeatherActivityNew"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="online.rh.simpleweather.activity.WeatherActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape" />
 
 
     </application>
