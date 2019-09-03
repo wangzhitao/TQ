@@ -189,8 +189,7 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
             }
         });
 
-        share_weather = (Button) findViewById(R.id.share_weather);
-        share_weather.setOnClickListener(this);
+
         menu_left = (Button) findViewById(R.id.menu_left);
         menu_left.setOnClickListener(this);
         add_city = (Button) findViewById(R.id.add_city);
@@ -684,24 +683,7 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.share_weather:
-                String fileName = "简约天气-分享.jpeg";
-                SharedPreferences prefs = getSharedPreferences("data_setting", MODE_PRIVATE);
-                String cityName = prefs.getString("nonce_city", null);
-                prefs = getSharedPreferences("data_city", MODE_PRIVATE);
-                final String weatherCode = prefs.getString(cityName, null);
-                if (TextUtils.isEmpty(weatherCode)) {
-                    ToastUtil.showToast(WeatherActivity.this, "☜ 亲！先添加一个城市吧", Toast.LENGTH_SHORT);
-                } else if (ScreenShotUtils.shotBitmap(WeatherActivity.this, getExternalCacheDir() + File.separator + fileName)) {
-                    ToastUtil.showToast(this, "分享天气给朋友", Toast.LENGTH_SHORT);
-                    Intent intent = new Intent(WeatherActivity.this, WeatherActivity.class);
-                    startActivity(intent);
-                    finish();
-                    ShareUtils.share(getExternalCacheDir() + File.separator + fileName, "来自简约天气的分享", WeatherActivity.this);
-                } else {
-                    ToastUtil.showToast(WeatherActivity.this, "        一键截图分享失败！\n\n请尝试打开存储空间权限哦", Toast.LENGTH_SHORT);
-                }
-                break;
+
             case R.id.menu_left:
                 drawer_layout.openDrawer(menu_list);
                 break;
