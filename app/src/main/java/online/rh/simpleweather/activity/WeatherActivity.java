@@ -538,7 +538,8 @@ public class WeatherActivity extends Activity implements SwipeRefreshLayout.OnRe
             date_0_tv.setText(prefs.getString("date_0", null));
             type_0_tv.setText(prefs.getString("type_0", null));
             fengli_0_tv.setText(prefs.getString("fengli_0", null));
-            ic_0_iv.setImageResource(selectImage(prefs.getString("type_0", null)));
+          //  ic_0_iv.setImageResource(selectImage(prefs.getString("type_0", null)));
+
             du_0.setText("°");
             divide_0.setText("/");
             type_000_tv.setText(prefs.getString("type_0", null));
