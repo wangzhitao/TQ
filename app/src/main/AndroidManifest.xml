@@ -13,10 +13,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
 
         <activity
-            android:name="online.rh.simpleweather.activity.ChooseAreaActivity"
+            android:name="online.rh.simpleweather.activity.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="landscape">
 
@@ -33,6 +33,10 @@
             android:screenOrientation="landscape" />
         <activity
             android:name="online.rh.simpleweather.activity.WeatherActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="online.rh.simpleweather.activity.ChooseAreaActivity"
             android:launchMode="singleTask"
             android:screenOrientation="landscape" />
 
