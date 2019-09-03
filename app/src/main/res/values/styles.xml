@@ -25,11 +25,16 @@
     </style>
 
     <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/colorPrimary2</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark2</item>
-        <item name="colorAccent">@color/colorPrimary2</item>
-        <item name="android:colorBackground">@color/colorPrimary2</item>
-        <item name="android:tint">@color/colorPrimary2</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorPrimary">@color/colorPrimary1</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark1</item>
+        <item name="colorAccent">@color/colorPrimary1</item>
+        <item name="android:colorBackground">@color/colorPrimary1</item>
+        <item name="android:tint">@color/colorPrimary1</item>
     </style>
 
     <style name="AppTheme3" parent="Theme.AppCompat.Light.DarkActionBar">

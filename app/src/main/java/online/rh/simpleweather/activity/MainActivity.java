@@ -1,13 +1,16 @@
 package online.rh.simpleweather.activity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -16,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,8 +27,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import online.rh.simpleweather.R;
 import online.rh.simpleweather.model.ListAdapter;
+import online.rh.simpleweather.util.ScreenShotUtils;
+import online.rh.simpleweather.util.ShareUtils;
+import online.rh.simpleweather.util.ToastUtil;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private RecyclerView mRecyclerView;
     private ListAdapter mListAdapter;
@@ -67,15 +74,11 @@ public class MainActivity extends AppCompatActivity {
             decorView.setSystemUiVisibility(option);
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(Color.TRANSPARENT);
-            //导航栏颜色也可以正常设置
-            //window.setNavigationBarColor(Color.TRANSPARENT);
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window window = this.getWindow();
             WindowManager.LayoutParams attributes = window.getAttributes();
             int flagTranslucentStatus = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
             attributes.flags |= flagTranslucentStatus;
-            //int flagTranslucentNavigation = WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION;
-            //attributes.flags |= flagTranslucentNavigation;
             window.setAttributes(attributes);
         }
 
@@ -122,4 +125,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.tianqi_0:
+                Intent intent_choose_theme = new Intent(this, WeatherActivity.class);
+                startActivity(intent_choose_theme);
+                break;
+            default:
+                break;
+        }
+    }
 }
