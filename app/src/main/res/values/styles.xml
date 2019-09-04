@@ -16,12 +16,6 @@
     </style>
 
     <style name="AppTheme1" parent="Theme.AppCompat.Light.NoActionBar">
-
-        <item name="colorPrimary">@color/colorPrimary1</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark1</item>
-        <item name="colorAccent">@color/colorPrimary1</item>
-        <item name="android:colorBackground">@color/colorPrimary1</item>
-        <item name="android:tint">@color/colorPrimary1</item>
     </style>
 
     <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
