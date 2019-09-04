@@ -5,12 +5,14 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -19,23 +21,43 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkManager;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import online.rh.simpleweather.R;
 import online.rh.simpleweather.model.ListAdapter;
-import online.rh.simpleweather.util.ScreenShotUtils;
-import online.rh.simpleweather.util.ShareUtils;
-import online.rh.simpleweather.util.ToastUtil;
+import online.rh.simpleweather.work.WorkerClass;
+
+import static online.rh.simpleweather.util.TimeTool.getTimeNew;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private RecyclerView mRecyclerView;
     private ListAdapter mListAdapter;
     private List<String> mDatas;
+    HashMap<String, String> mMap;
+    Handler handler = new Handler();
+
+    Runnable runnable = new Runnable() {
+
+        @Override
+
+        public void run() {
+
+//这里写入要作的事情
+            initView();
+
+            handler.postDelayed(this, 60000);
+
+        }
+
+    };
 
 
     @BindView(R.id.ic_0)
@@ -84,13 +106,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         ButterKnife.bind(this);
-        SharedPreferences prefs = getSharedPreferences("武汉", MODE_PRIVATE);
-        low0.setText(prefs.getString("low_0", "32  /  20"));
-        type0.setText(prefs.getString("type_0", "晴到多云"));
 
-        time0.setText("15 : 50");
-        day0.setText("2019/9/3   星期一");
+        final PeriodicWorkRequest periodicWorkRequest
+                = new PeriodicWorkRequest.Builder(WorkerClass.class, 2, TimeUnit.MINUTES)
+                .build();
+        WorkManager.getInstance().enqueue(periodicWorkRequest);
+        initView();
 
+
+        handler.postDelayed(runnable, 60000);
 
         initData();
 
@@ -117,6 +141,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+
+    protected void initView() {
+        SharedPreferences prefs = getSharedPreferences("武汉", MODE_PRIVATE);
+        low0.setText(prefs.getString("low_0", "32  /  20"));
+        type0.setText(prefs.getString("type_0", "晴到多云"));
+
+        mMap = getTimeNew();
+        Log.d("wztbs", "week = " + mMap.get("week"));
+        String mMinute = mMap.get("minute");
+        if (mMinute.length() == 1) {
+            mMinute = "0" + mMinute;
+        }
+        // time0.setText("15 : 50");
+        time0.setText(mMap.get("hour") + " : " + mMinute);
+        day0.setText(mMap.get("year") + "/" + mMap.get("month") + "/" + mMap.get("day") + "            星期" + mMap.get("week"));
+
+
+    }
+
     protected void initData() {
         mDatas = new ArrayList<String>();
         for (int i = 0; i < 21; i++) {
@@ -136,4 +179,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacks(runnable);
+    }
+
 }
